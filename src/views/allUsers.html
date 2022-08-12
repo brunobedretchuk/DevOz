@@ -1,0 +1,15 @@
+<div class="listDiv d-flex justify-content-center">
+    <% for (let user of userList){%>
+        <div>
+
+    <div class="card m-5 text-center">
+      <div class="card-header"><%= user.nome %></div>
+      <div class="card-body">
+        <h5 class="card-title"><%= user.email %></h5>
+        <p class="card-text">Idade: <%= user.idade %> anos.</p>
+        <a class="editLink" href="/edit/<%= user.id %> ">Editar</a>
+      </div>
+    </div>
+    <% } %>
+</div>
+</div>
