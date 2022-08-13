@@ -1,0 +1,38 @@
+<div class="my-5 container-fluid">
+  <form class="form-group" action="/register_user" method="POST">
+    <div class="d-flex m-5 p-5 flex-column align-items-center gap-2">
+      <div class="text-center row">
+        <p class="userRegistration">User Registration</p>
+      </div>
+      <div>
+        <label for="nome">Insert your name:</label>
+      </div>
+      <div>
+        <input class="form-control" type="text" id="nome" name="nome" />
+      </div>
+
+      <div>
+        <label for="email">Insert your email:</label>
+      </div>
+      <div>
+        <input class="form-control" type="text" id="email" name="email" />
+      </div>
+
+      <div>
+        <label for="idade">Insert your age:</label>
+      </div>
+      <div>
+        <input
+          class="form-control"
+          type="number"
+          min="18"
+          id="idade"
+          name="idade"
+        />
+      </div>
+      <div>
+        <button class="btn btn-secondary btn-sm">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>

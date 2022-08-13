@@ -5,6 +5,7 @@ let userSchema = new Schema({
   nome: {
     type: String,
     required: true,
+    unique: [true , 'Usuário já foi inserido no Banco de Dados']
   },
   email: {
     type: String,

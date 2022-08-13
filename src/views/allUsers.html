@@ -1,4 +1,5 @@
 <div class="listDiv d-flex justify-content-center">
+    <% if (userList.length > 0){%> 
     <% for (let user of userList){%>
         <div>
 
@@ -7,9 +8,13 @@
       <div class="card-body">
         <h5 class="card-title"><%= user.email %></h5>
         <p class="card-text">Idade: <%= user.idade %> anos.</p>
-        <a class="editLink" href="/edit/<%= user.id %> ">Editar</a>
+        <a class="editLink" href="/users/<%= user.id %> ">Editar</a>
       </div>
     </div>
     <% } %>
-</div>
+    <% } %>
+    <%if (userList.length == 0) {%> 
+        <div class="mt-5"><h6>Desculpe, não existem usuários cadastrados.</h6></div>
+        <% } %>
+    </div>
 </div>

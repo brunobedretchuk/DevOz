@@ -36,13 +36,13 @@ render(app , {
   cache: false,
   debug: false
 })
+
 // Routes Imports
 mainRouter =  require('./routes/main')
 //Routes Use
-app
-  .use(mainRouter.routes())
-  .use(router.allowedMethods())
-  .use(bodyParser());
+app.use(bodyParser());
+app.use(router.allowedMethods())
+app.use(mainRouter.routes())
 
 const server = app.listen(PORT , ()=> console.log(`Listening in Port ${PORT}...`));
 module.exports = server;
