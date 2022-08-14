@@ -9,6 +9,7 @@ const bodyParser = require('koa-bodyparser')
 require('dotenv').config()
 const PORT = process.env.PORT;
 const router = new Router;
+const methodOverride = require('koa-methodoverride');
 
 //DB Connection Setup
 const mongoose = require('mongoose')
@@ -41,6 +42,7 @@ render(app , {
 mainRouter =  require('./routes/main')
 //Routes Use
 app.use(bodyParser());
+app.use(methodOverride('_method'));
 app.use(router.allowedMethods())
 app.use(mainRouter.routes())
 
