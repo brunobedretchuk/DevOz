@@ -12,8 +12,8 @@ let getIndex = async (ctx) => {
     await ctx.render("index", {});
     ctx.response.status = 200;
   } catch (err) {
-    console.log(error.message);
-    ctx.response.status = 200;
+    console.log(err.message);
+    
   }
 };
 
@@ -24,7 +24,8 @@ let getUsers = async (ctx) => {
       userList: users,
     });
   } catch (e) {
-    console.log(e);
+    console.log(err.message);
+
   }
 };
 let getRegisterUser = async (ctx) => {
@@ -42,7 +43,7 @@ let getUser = async (ctx) => {
     });
   } catch (err) {
     ctx.response.status = 404;
-    console.log(ctx.response.status);
+    console.log(err.message)
   }
 };
 
@@ -54,9 +55,8 @@ let postUser = async (ctx) => {
     await user.save();
     ctx.response.body = "User Created!";
   } catch (err) {
-    ctx.response.text =
-      "Desculpe, ocorreu um erro! Usuário já existe no banco ou foi requisitado como menor de idade!";
     ctx.response.status = 400;
+    console.log(err.message)
   }
 };
 
@@ -71,8 +71,8 @@ let patchUser = async (ctx) => {
     ctx.redirect("/users");
   } catch (err) {
     console.log(err.message);
-    ctx.response.status = 400;
     ctx.redirect("/");
+    ctx.response.status = 400;
   }
 };
 
@@ -83,8 +83,8 @@ let deleteUser = async (ctx) => {
     ctx.redirect("/users");
   } catch (err) {
     console.log(err.message);
-    ctx.response.status = 400;
     ctx.redirect("/");
+    ctx.response.status = 400;
   }
 };
 
